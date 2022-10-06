@@ -12,7 +12,7 @@ class TodoController extends Controller
     //
     public function index()
     {
-        $todos = Todo::all();
+        $todos = Todo::orderBy('completed', 'desc')->get();
         return view('todos.index', compact('todos'));
     }
 
