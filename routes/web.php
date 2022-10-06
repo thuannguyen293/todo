@@ -17,8 +17,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/todos', 'TodoController@index')->name('todos.index');
-Route::get('/todos/create', 'TodoController@create')->name('todos.create');
-Route::post('/todos/create', 'TodoController@store')->name('todos.store');
-Route::get('/todos/edit/{id}', 'TodoController@edit')->name('todos.edit');
-Route::put('/todos/update/{id}', 'TodoController@update')->name('todos.update');
+// Route::get('/todos', 'TodoController@index')->name('todos.index');
+// Route::get('/todos/create', 'TodoController@create')->name('todos.create');
+// Route::post('/todos/create', 'TodoController@store')->name('todos.store');
+// Route::get('/todos/edit/{id}', 'TodoController@edit')->name('todos.edit');
+// Route::put('/todos/update/{id}', 'TodoController@update')->name('todos.update');
+Route::put('/todos/complete/{todo}', 'TodoController@complete')->name('todo.complete');
+// Route::delete('/todos/delete/{todo}', 'TodoController@delete')->name('todos.delete');
+Route::resource('/todo', 'TodoController');
