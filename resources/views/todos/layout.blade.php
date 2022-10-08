@@ -10,6 +10,7 @@
         integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" 
         crossorigin="anonymous" 
         referrerpolicy="no-referrer" />
+        @livewireStyles
 </head>
 <body>
     <div class="text-center flex justify-center pt-10">
@@ -17,5 +18,6 @@
             @yield('content')
        </div>
     </div>
+    @livewireScripts
 </body>
 </html>

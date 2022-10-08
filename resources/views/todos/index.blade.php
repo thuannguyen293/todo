@@ -7,9 +7,9 @@
 </div>
 <x-alert />
 <ul class="my-5">
-    @foreach ($todos as $todo)
+    @forelse ($todos as $todo)
         <li class="flex justify-between p-2">
-            <p class="{{ $todo->completed ? 'line-through' : '' }}">{{ $todo->title }}</p>
+            <p class="{{ $todo->completed ? 'line-through' : '' }}"><a href="{{ route('todo.show', $todo->id) }}">{{ $todo->title }}</a></p>
             <div>
                 <a href="{{ route('todo.edit', $todo->id) }}" class="cursor-pointer rounded text-orange-400"><span class="fas fa-edit px-2"></span></a>
                 <span 
@@ -35,6 +35,8 @@
             </div>
             
         </li>
-    @endforeach
+    @empty
+        <p>No task available, create one</p>
+    @endforelse
 </ul>
 @endsection
